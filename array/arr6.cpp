@@ -10,8 +10,19 @@ typedef unsigned long long int ull;
 
 // write code here
 void rsolve(){
-    ll n,k;
-
+    ll n,m,k;
+    cin>>n>>m;
+    vector<int> a(n),b(m);
+    unordered_set<int> s;
+    for(int i=0;i<n;++i){
+        cin>>a[i];
+        s.insert(a[i]);
+    }
+    for(int i=0;i<m;++i){
+        cin>>b[i];
+        s.insert(b[i]);
+    }
+    cout<<s.size();
 }
 
 

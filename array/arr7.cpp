@@ -11,7 +11,14 @@ typedef unsigned long long int ull;
 // write code here
 void rsolve(){
     ll n,k;
-
+    cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;++i){
+        cin>>a[(i+1)%n];
+    }
+    for(int i=0;i<n;++i){
+        cout<<a[i]<<" ";
+    }
 }
 
 
