@@ -21,10 +21,17 @@ int getMinDiff(ll *a, ll n, ll k)
 
     for (ll i = 0; i < n; ++i)
     {
-        if (a[i] < (max - (2 * k)))
+        if(a[i]==min){
             a[i] += k;
-        else if (a[i] > (min + (2 * k)))
+            min = a[i];
+        }else if(a[i]==max){
             a[i] -= k;
+            max = a[i];
+        }else if(a[i]<max-k){
+            a[i] + k;
+        }else{
+            a[i] - k;
+        }
     }
     max = 0;
     min = 100000;
@@ -68,10 +75,10 @@ int main()
 {
 
 // I/0 REDIRECTION For local setup
-#ifndef ONLINE_JUDGE
-    freopen("../input.txt", "r", stdin);
-    freopen("../output.txt", "w", stdout);
-#endif
+    #ifndef ONLINE_JUDGE
+        freopen("../input.txt", "r", stdin);
+        freopen("../output.txt", "w", stdout);
+    #endif
 
     // FAST I/O
     ios_base::sync_with_stdio(false);
